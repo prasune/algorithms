@@ -3,7 +3,7 @@ package com.test.algorithm.heap;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class TopNItems {
+public class TopNHashtags {
 
     public static void main(String[] args) {
         int n = 3;
