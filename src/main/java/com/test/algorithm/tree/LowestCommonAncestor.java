@@ -12,8 +12,6 @@ public class LowestCommonAncestor {
         root.getRight().setRight(new TreeNode(7));
         root.getRight().setLeft(new TreeNode(5));
 
-        printTreeInOrder(root);
-
         System.out.println("lowestCommonAncestor for: " + lowestCommonAncestor(root, 3, 1));
     }
 
@@ -27,14 +25,5 @@ public class LowestCommonAncestor {
             return lowestCommonAncestor(root.getLeft(), data1, data2);
         }
         return root;
-    }
-
-    private static void printTreeInOrder(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        printTreeInOrder(root.getLeft());
-        System.out.println(root);
-        printTreeInOrder(root.getRight());
     }
 }
