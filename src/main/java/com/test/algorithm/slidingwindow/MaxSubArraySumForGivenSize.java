@@ -14,12 +14,10 @@ public class MaxSubArraySumForGivenSize {
         int startIndex = 0;
         for (int i = 0; i < input.length; i++) {
             subArraySum = subArraySum + input[i];
-            if (i >= subArraySize) {
-                subArraySum = subArraySum - input[startIndex];
-                startIndex ++;
-            }
             if (i >= subArraySize-1) {
                 maxSubArraySum = Math.max(subArraySum, maxSubArraySum);
+                subArraySum = subArraySum - input[startIndex];
+                startIndex ++;
             }
         }
         return maxSubArraySum;
