@@ -1,4 +1,4 @@
-package com.test.algorithm;
+package com.test.algorithm.arrays;
 
 public class GroupByEvenAndOdd {
     public static void main(String[] args) {
