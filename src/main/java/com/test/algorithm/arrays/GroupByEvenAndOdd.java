@@ -1,4 +1,4 @@
-package com.test.algorithm;
+package com.test.algorithm.arrays;
 
 public class GroupByEvenAndOdd {
     public static void main(String[] args) {
@@ -13,9 +13,12 @@ public class GroupByEvenAndOdd {
         int newEvenIndex = 0;
         for (int i=0; i< numArray.length; i++) {
             if(numArray[i]%2 == 0) {
-                int temp = numArray[newEvenIndex];
-                numArray[newEvenIndex] = numArray[i];
-                numArray[i] = temp;
+                if (i != newEvenIndex) {
+                    // swap
+                    int temp = numArray[newEvenIndex];
+                    numArray[newEvenIndex] = numArray[i];
+                    numArray[i] = temp;
+                }
                 newEvenIndex++;
             }
         }

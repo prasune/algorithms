@@ -20,17 +20,13 @@ public class LongestUniqueSubstring {
         for (int i = 0; i < s.length(); i++) {
             if(charIndexMap.containsKey(s.charAt(i))) {
                 currentSequenceLength = i - startIndex;
-                if (currentSequenceLength > lengthOfLongestSubstring) {
-                    lengthOfLongestSubstring = currentSequenceLength;
-                }
+                lengthOfLongestSubstring = Math.max(currentSequenceLength, lengthOfLongestSubstring);
                 startIndex = Math.max(startIndex, charIndexMap.get(s.charAt(i)) + 1);
             }
             charIndexMap.put(s.charAt(i), i);
         }
         currentSequenceLength = s.length() - startIndex;
-        if (currentSequenceLength > lengthOfLongestSubstring) {
-            lengthOfLongestSubstring = currentSequenceLength;
-        }
+        lengthOfLongestSubstring = Math.max(currentSequenceLength, lengthOfLongestSubstring);
         return lengthOfLongestSubstring;
     }
 }
